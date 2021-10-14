@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  #tabs-demo {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    width: 100%;
+    height: 100vh;
+    background-color: lightgray;
+  }
+
+  .container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: #292a2d;
+  }
+
+  .tabs {
+    display: flex;
+    width: 500px;
+    height: 30px;
+    color: #919191;
+    border-bottom: 1px solid #494c50;
+
+  }
+
+  .tab {
+    width: 33%;
+    height: 30px;
+    background-color: #292a2d;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    padding: 0 5px;
+    border-bottom: 1px solid #494c50;
+
+  }
+
+
+
+  .active {
+    color: gainsboro;
+    background-color: #000000;
+  }
+
+  .content {
+    padding: 50px;
+    width: 500px;
+    height: 300px;
+    line-height: 25px;
+    display: none;
+    color: white;
+  }
+
+  .now {
+    display: block;
+  }
+</style>
+
+
+<body>
+  <section id="tabs-demo">
+    <div class="container">
+      <div class="tabs">
+        <div class="tab">News</div>
+        <div class="tab active">Games</div>
+        <div class="tab">Shopping</div>
+      </div>
+      <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nesciunt perferendis
+        expedita voluptatibus eligendi debitis rerum! Ducimus suscipit quis culpa, adipisci excepturi laboriosam ab
+        officiis cum libero. Dolorem, laboriosam vero.</div>
+      <div class="content now">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maxime quam deleniti amet
+        dicta aliquid veniam dolores. Vel vero blanditiis deleniti labore est? Tempore quisquam perferendis corrupti
+        ut molestiae? Cumque?</div>
+      <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, culpa! Laboriosam hic in
+        exercitationem, accusantium sed nulla quod minus odio deserunt similique consequatur veritatis ab odit ducimus
+        ratione, corporis dignissimos!</div>
+    </div>
+  </section>
+
+  <script>
+    var tabs = document.querySelectorAll('.tab')
+    var contents = document.querySelectorAll('.content')
+
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].onclick = function () {
+        for (let i = 0; i < tabs.length; i++) {
+          tabs[i].classList.remove('active')
+          contents[i].classList.remove('now')
+        }
+        tabs[i].classList.add('active')
+        contents[i].classList.add('now')
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
